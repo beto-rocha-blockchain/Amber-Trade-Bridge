@@ -66,34 +66,34 @@ Ferramentas:
 
 amber-trade/
 │
-├── LICENSE.md
-├── README.md
-├── docs/
-│ ├── architecture.md
-│ ├── tokenomics.md
-│ ├── roadmap.md
-│ └── img/
-│ └── fluxo_amber_trade.png
-│
-├── contracts/
-│ ├── stellar/
-│ └── ethereum/
-│
-├── circuits/
-├── bridge/
-└── frontend/
+├── LICENSE.md  
+├── README.md  
+├── docs/  
+│ ├── architecture.md  
+│ ├── tokenomics.md  
+│ ├── roadmap.md  
+│ └── img/  
+│ └── fluxo_amber_trade.png  
+│  
+├── contracts/  
+│ ├── stellar/  
+│ └── ethereum/  
+│  
+├── circuits/  
+├── bridge/  
+└── frontend/  
 
 ---
 
 ## 🧑‍💻 Desenvolvedor Principal
 **Roberto da Rocha Pimentel Junior**  
-Blockchain Engineer | Especialista em ZKPs e Tokenização
-6ª colocação — Hackaton **O Grande Código 2025 (ZKVerify)**
-4ª colocação — Hackathon **HackMeridian 2025 (Stellar)**
+Blockchain Engineer | Especialista em ZKPs e Tokenização  
+6ª colocação — Hackaton **O Grande Código 2025 (ZKVerify)**  
+4ª colocação — Hackathon **HackMeridian 2025 (Stellar)**  
 
 ---
 
-## 📄 Licença
+## 📄 Licença  
 Este projeto é licenciado sob a **Apache 2.0**, com sub-licenças **MIT** e **CC BY 4.0** conforme descrito em [`LICENSE.md`](LICENSE.md).
 
 ---
