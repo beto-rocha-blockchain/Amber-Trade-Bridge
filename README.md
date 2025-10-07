@@ -95,6 +95,7 @@ Atuou como Engenheiro Blockchain e líder técnico em projetos premiados, inclui
 Especialista em arquiteturas multichain e soluções descentralizadas de energia, é responsável pela concepção técnica e estratégica da Amber Trade, unindo inovação, privacidade e governança em um ecossistema global de energia digital.  
 
 **Eduardo Ferreira da Silva**  
+  
 Especialista em Mercado de Energia & Compliance Regulatória ⚡  
 Profissional com sólida trajetória no mercado de negociação de ativos de energia elétrica, com atuação prática em modelos de comercialização, gestão de contratos e análise de risco em ambientes regulados e livres.
 
