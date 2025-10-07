@@ -85,8 +85,9 @@ amber-trade/
 
 ---
 
-## 🧑‍💻 Desenvolvedor Principal
-**Roberto da Rocha Pimentel Junior**  
+## 🧑‍💻 Desenvolvedores Principais
+**Roberto da Rocha Pimentel Junior** 
+**Eduardo Ferreira da Silva**  
 Blockchain Engineer | Especialista em ZKPs e Tokenização  
 6ª colocação — Hackaton **O Grande Código 2025 (ZKVerify)**  
 4ª colocação — Hackathon **HackMeridian 2025 (Stellar)**  
