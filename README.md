@@ -64,8 +64,8 @@ Ferramentas:
 
 ## ⚙️ Estrutura do Repositório
 
-amber-trade/
-│
+amber-trade/  
+│  
 ├── LICENSE.md  
 ├── README.md  
 ├── docs/  
