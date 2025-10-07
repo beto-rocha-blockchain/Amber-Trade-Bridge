@@ -87,10 +87,20 @@ amber-trade/
 
 ## 🧑‍💻 Desenvolvedores Principais
 **Roberto da Rocha Pimentel Junior** 
-**Eduardo Ferreira da Silva**  
+  
 Blockchain Engineer | Especialista em ZKPs e Tokenização  
-6ª colocação — Hackaton **O Grande Código 2025 (ZKVerify)**  
-4ª colocação — Hackathon **HackMeridian 2025 (Stellar)**  
+Profissional com sólida experiência em desenvolvimento de soluções blockchain, atuando em projetos que envolvem contratos inteligentes, tokenização de ativos reais (RWA) e provas de conhecimento zero (ZKPs).
+Possui domínio técnico em Solidity, Rust, WebAssembly e integração de oráculos, com foco em segurança, escalabilidade e interoperabilidade entre redes.
+Atuou como Engenheiro Blockchain e líder técnico em projetos premiados, incluindo o Ambar Trade, que conquistou a 4ª colocação no Hackathon HackMeridian (Stellar, 2024), destacando-se pela aplicação de tecnologia de oráculos e tokens lastreados em XLM.
+Especialista em arquiteturas multichain e soluções descentralizadas de energia, é responsável pela concepção técnica e estratégica da Amber Trade, unindo inovação, privacidade e governança em um ecossistema global de energia digital.  
+
+**Eduardo Ferreira da Silva**  
+Co-fundador — Especialista em Mercado de Energia e Regulação
+Atua no setor de comercialização de energia, com profundo conhecimento da legislação e operação do mercado livre brasileiro, garantindo conformidade e integração entre o mercado tradicional e o ambiente blockchain.  
+  
+## 🏆 Premiações do projeto 🏆
+🎯 🏅 6ª colocação — Hackaton **O Grande Código 2025 (ZKVerify)**  
+🎯 🎖️ 4ª colocação — Hackathon **HackMeridian 2025 (Stellar)**  
 
 ---
 
