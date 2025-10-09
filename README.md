@@ -1,10 +1,32 @@
-# Em construção - Under constuction
-
-# ⚡ Amber-Trade - Plataforma Multichain de Tokenização de Energia
+# ⚡ Amber Trade — Plataforma Multichain de Tokenização de Energia
 
 Amber Trade é uma **plataforma descentralizada de tokenização e negociação de energia**, desenvolvida sobre uma **arquitetura híbrida multichain**, integrando as redes **Stellar (Soroban)** e **Ethereum (EVM)**.
 
-O objetivo do projeto é **representar energia elétrica real (kWh)** como ativos digitais rastreáveis (RWA – Real World Assets), possibilitando **liquidez global e governança descentralizada**.
+O objetivo do projeto é **representar energia elétrica real (kWh)** como ativos digitais rastreáveis (RWA – Real World Assets), permitindo **liquidez global**, **governança descentralizada** e **lastro físico comprovado**.
+
+---
+
+## 🧭 Visão Geral
+
+Amber Trade conecta o mercado real de energia ao ecossistema blockchain, transformando kWh gerados em tokens digitais lastreados, negociáveis globalmente.  
+A plataforma viabiliza:
+- Rastreabilidade do lastro físico,
+- Liquidez em stablecoins e ativos digitais,
+- Governança descentralizada sobre regras de mercado,
+- Proteção de dados sensíveis com ZK-Proofs,
+- Interoperabilidade entre redes Stellar e Ethereum via Amber Bridge.
+
+---
+
+## 🪙 Lastro e Compliance Regulatória
+
+Cada **1 AMBR = 1 kWh** de energia elétrica **real e certificada**.
+
+- A medição da geração é feita via **medidores IoT homologados**, integrados a oráculos descentralizados.
+- A certificação é validada com base nas regras do **mercado livre de energia (CCEE)** e diretrizes da **ANEEL**.
+- Cada token emitido é vinculado a um registro de geração, validado por prova de conhecimento zero.
+- Quando o kWh é consumido, o token correspondente é **queimado**, retirando-o definitivamente de circulação.
+- Essa lógica garante **supply controlado**, **lastro real** e **transparência auditável**.
 
 ---
 
@@ -12,104 +34,120 @@ O objetivo do projeto é **representar energia elétrica real (kWh)** como ativo
 
 ### 🔹 Camada Stellar (Soroban)
 - **Linguagem:** Rust + WebAssembly
-- **Função:** Emissão de tokens RWA (EnerTokens) lastreados em energia real gerada;
-- **ZK-Proofs:** Garantia de privacidade sobre dados sensíveis de geração (produção, geolocalização, volume e tipo de energia).
+- **Função:** Emissão de tokens AMBR lastreados em kWh reais
+- **ZK-Proofs:** Provas de geração de energia sem exposição de dados sensíveis
 - **Contrato principal:** `energy_rwa.rs`
+- **Ação principal:** Mint de tokens AMBR correspondentes à energia gerada
+
+### 🔹 Amber Bridge (Cross-Chain)
+- **Linguagem:** Rust + Solidity
+- **Função:** Sincronizar eventos e liquidez entre Stellar e Ethereum
+- **Validação:** ZK + Oráculo descentralizado
+- **Mecânica:** Bloqueia tokens AMBR na Stellar → Mint de AMBR espelhados na Ethereum → Burn sincronizado na liquidação
 
 ### 🔹 Camada Ethereum (EVM)
 - **Linguagem:** Solidity
-- **Função:** Liquidez dos tokens e interação com o mercado de criptoativos;
-- **ZK-Proofs:** Provas de integridade e privacidade sobre dados do usuário e transações;
+- **Função:** Garantir liquidez dos tokens AMBR no mercado cripto
+- **ZK-Proofs:** Provas de integridade de transações e privacidade do usuário
 - **Contrato principal:** `exchange.sol`
-
-### 🔹 Bridge Cross-Chain (Amber Bridge)
-- **Linguagem:** Rust + Solidity
-- **Função:** Sincronizar eventos e liquidez entre Stellar e Ethereum via protocolo seguro;
-- **Validação:** ZK + Oráculo descentralizado (para leitura de geração real).
+- **Ação principal:** Interação com DEX, pools de liquidez e governança
 
 ---
 
-## 💠 Token AMBR (ERC-20 + Governança)
-- **Tipo:** Token ERC-20 e de governança (modelo híbrido);
-- **Uso:**
-  - Votação em propostas de governança;
-  - Participação em pools de liquidez;
-  - Recompensas por geração e staking de energia limpa;
-  - Interoperabilidade com EnerTokens (RWA).
+## 💰 Token AMBR (ERC-20 + Stellar Asset)
+
+- **Símbolo:** AMBR  
+- **Nome:** Amber Energy Token  
+- **Tipo:** Token ERC-20 (Ethereum) e Asset nativo (Stellar)  
+- **Lastro:** 1 AMBR = 1 kWh certificado
+
+### 🔸 Funções do Token
+- Representação digital de energia real;
+- Interoperabilidade entre Stellar ↔ Ethereum via Amber Bridge;
+- Votação em propostas de governança do ecossistema;
+- Participação em pools de liquidez e programas de staking;
+- Ativo de investimento lastreado em energia renovável.
+
+### 🔸 Supply Control
+- Mint inicial: Stellar (com base em geração validada)
+- Bridge: Bloqueio em Stellar ↔ Mint em Ethereum
+- Burn: Queima em ambas as redes ao consumir energia
+- Auditoria pública de supply
 
 ---
 
-## 🔒 Privacidade e Provas de Conhecimento Zero (ZK)
-Amber Trade utiliza **provas ZK (Zero-Knowledge)** em duas camadas:
-1. **ZK-Geração:** valida a geração de energia sem expor dados sensíveis (em Stellar);
-2. **ZK-Transação:** garante anonimato e integridade nas trocas de tokens (em Ethereum).
+## 🪫 Precificação e Liquidação
 
-Ferramentas:
-- `snarkjs`, `circom`, `zkInterface` e `halo2` (dependendo do circuito e da rede).
-
----
-
-## 🔗 Fluxo Operacional Simplificado
-
-1. **Geração de Energia Real** → capturada via IoT/oráculo;
-2. **Registro ZK da Produção** → prova de geração em Stellar (Rust + WASM);
-3. **Tokenização RWA (EnerToken)** → emissão do ativo digital;
-4. **Envio Cross-Chain** → via Amber Bridge para a rede Ethereum;
-5. **Liquidez no Mercado Cripto** → troca de EnerToken ↔ AMBR ou outras moedas;
-6. **Consumidor Final / Governança** → uso, voto e staking de AMBR.
-
-![Fluxograma do Sistema](docs/img/fluxo_amber_trade.png)
+- O preço de referência do AMBR será **indexado ao PLD (Preço de Liquidação das Diferenças)**, definido pela **CCEE**.
+- Opcionalmente, AMBR poderá ser pareado com stablecoins (USDC / BRL) para liquidez internacional.
+- A liquidação ocorre de três formas:
+  1. **Revenda no mercado cripto (DEX)**
+  2. **Manter em carteira como investimento**
+  3. **Troca pelo ativo real (energia)** → **queima automática** do token
 
 ---
 
-## ⚙️ Estrutura do Repositório
+## 🔐 Privacidade e ZK-Proofs
 
-amber-trade/  
-│  
-├── LICENSE.md  
-├── README.md  
-├── docs/  
-│ ├── architecture.md  
-│ ├── tokenomics.md  
-│ ├── roadmap.md  
-│ └── img/  
-│ └── fluxo_amber_trade.png  
-│  
-├── contracts/  
-│ ├── stellar/  
-│ └── ethereum/  
-│  
-├── circuits/  
-├── bridge/  
-└── frontend/  
+Amber Trade utiliza **Zero-Knowledge Proofs (ZK)** em duas camadas:
+
+1. **ZK-Geração:** prova de geração em Stellar, garantindo lastro sem expor dados sensíveis como localização e volume;
+2. **ZK-Transação:** anonimato e integridade nas operações de compra, venda e liquidação em Ethereum.
+
+Ferramentas utilizadas:
+- `snarkjs`, `circom`, `halo2`, `zkInterface`.
 
 ---
+
+## 🔗 Fluxo Operacional
+
+
+1. Geração de energia real → Medição IoT
+2. Registro ZK da produção → Rede Stellar
+3. Mint de tokens AMBR lastreados (1:1 kWh)
+4. Envio Cross-Chain via Amber Bridge
+   - Stellar: token bloqueado
+   - Ethereum: token mintado
+5. Liquidação:
+   - Revenda no mercado cripto
+   - Investimento em carteira
+   - Troca por energia → queima do token nas duas redes
+
+
+## 🧭 Governança
+
+O ecossistema AMBR é gerido por uma DAO de governança híbrida.
+
+- Holders podem votar em:
+
+- Atualizações da Bridge
+
+- Indexadores de preço
+
+- Taxas de transação
+
+- Programas de incentivo para energia renovável
+
+A governança tem como objetivo alinhar mercado energético físico e financeiro descentralizado.
+
 
 ## 🧑‍💻 Desenvolvedores Principais
-**Roberto da Rocha Pimentel Junior** 
-  
-Blockchain Engineer | Especialista em ZKPs e Tokenização 📟  
-Profissional com sólida experiência em desenvolvimento de soluções blockchain, atuando em projetos que envolvem contratos inteligentes, tokenização de ativos reais (RWA) e provas de conhecimento zero (ZKPs).
-Possui domínio técnico em Solidity, Rust, WebAssembly e integração de oráculos, com foco em segurança, escalabilidade e interoperabilidade entre redes.
-Atuou como Engenheiro Blockchain e líder técnico em projetos premiados, incluindo o Ambar Trade, que conquistou a 4ª colocação no Hackathon HackMeridian (Stellar, 2024), destacando-se pela aplicação de tecnologia de oráculos e tokens lastreados em XLM.
-Especialista em arquiteturas multichain e soluções descentralizadas de energia, é responsável pela concepção técnica e estratégica da Amber Trade, unindo inovação, privacidade e governança em um ecossistema global de energia digital.  
 
-**Eduardo Ferreira da Silva**  
-  
-Especialista em Mercado de Energia & Compliance Regulatória ⚡  
-Profissional com sólida trajetória no mercado de negociação de ativos de energia elétrica, com atuação prática em modelos de comercialização, gestão de contratos e análise de risco em ambientes regulados e livres.
+Roberto da Rocha Pimentel Junior
+Blockchain Engineer | Especialista em ZKPs e Tokenização de Ativos
+Líder técnico do Amber Trade, responsável pela arquitetura multichain, integrações oraculares e ZK Proofs.
 
-Reconhecido por seu profundo domínio das normas e diretrizes da ANEEL e da CCEE, é responsável por garantir a conformidade jurídica e regulatória da tokenização de energia no projeto, assegurando que a transição entre o mercado físico e o digital ocorra dentro dos parâmetros legais.
+Eduardo Ferreira da Silva
+Especialista em Mercado de Energia & Compliance Regulatória
+Responsável pela adequação do projeto às normas da CCEE, ANEEL e expansão internacional.
 
-Além de sua expertise técnica, contribui com a visão estratégica de expansão do modelo para diferentes mercados internacionais, conectando o ecossistema de energia tradicional ao universo blockchain de forma segura, escalável e transparente.  
-  
-## 🏆 Premiações do projeto 🏆
-🎯 🏅 6ª colocação — Hackaton **O Grande Código 2025 (ZKVerify)**  
-🎯 🎖️ 4ª colocação — Hackathon **HackMeridian 2025 (Stellar)**  
 
----
+## 🏆 Premiações
 
-## 📄 Licença  
-Este projeto é licenciado sob a **Apache 2.0**, com sub-licenças **MIT** e **CC BY 4.0** conforme descrito em [`LICENSE.md`](LICENSE.md).
+🎖️ 4ª colocação — Hackathon HackMeridian (Stellar)
+🏅 6ª colocação — Hackathon O Grande Código (ZKVerify)
 
----
+
+## 📜 Licença
+
+Este projeto é licenciado sob Apache 2.0, com sub-licenças MIT e CC BY 4.0, conforme descrito em LICENSE.md
